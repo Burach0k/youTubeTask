@@ -1,0 +1,164 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #333d46;
+  overflow: hidden;
+}
+
+.slide-tape {
+  --i: 0;
+  --tx: 0;
+  --time: 0.5s;
+
+  transform: translateX(calc(var(--i) + var(--tx)));
+  transition: transform var(--time) ease-out;
+}
+
+#slide-tape {
+  display: flex;
+  margin-top: 40px;
+
+  align-items: center;
+
+  visibility: hidden;
+}
+
+.slide {
+  display: inline-block;
+  margin: 8% 2.5% 0 2.5%;
+  min-height: 400px;
+
+  border-radius: 6px;
+
+  align-self: start;
+  background-color: white;
+}
+
+a {
+  z-index: 2;
+
+  position: relative;
+  top: -60px;
+  width: 320px;
+}
+
+a p:nth-child(1) {
+  margin: 0;
+  height: 40px;
+
+  text-align: center;
+  color: black;
+  background-color: rgba(16, 101, 68, 0.8);
+}
+
+p:nth-child(3):before {
+  margin-right: 10px;
+
+  content: "\f2c0";
+  font-family: FontAwesome;
+}
+
+p:nth-child(4):before {
+  margin-right: 10px;
+
+  text-align: right;
+  content: "\f073";
+  font-family: FontAwesome;
+}
+
+p:nth-child(5):before {
+  margin-right: 10px;
+
+  content: "\f06e";
+  font-family: FontAwesome;
+}
+
+p:last-child {
+  text-align: justify;
+}
+
+div p {
+  position: relative;
+  top: -40px;
+  
+  margin: 2% 5% 2% 5%;
+  
+  text-align: center;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  overflow-x: hidden;
+}
+
+img {
+  z-index: 1;
+
+  margin: 1% 5% 1% 5%;
+  width: 90%;
+}
+input {
+  position: fixed;
+  z-index: 1;
+  
+  display: block;
+  width: 80vw;
+  height: 40px;
+  margin-left: 10%;
+  margin-top: -20px;
+
+  text-align: center;
+
+  border-radius: 4px;
+}
+
+span::after {
+  position: absolute;
+  top: 23px;
+  left: 10.5%;
+  z-index: 2;
+
+  display: inline-block;
+
+  font-size: 30px;
+  content: "\f002";
+  font-family: FontAwesome;
+  color: black;
+}
+
+ul {
+  position: absolute;
+  left: 40%;
+  bottom: 10%;
+
+  display: flex;
+  
+  text-align: center;
+  
+  opacity: 0;
+  
+  --timeopacity: 1s;
+  transition: opacity var(--timeopacity) ease-in;
+}
+
+li {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 10px 7px 5px 7px;
+
+  background-color: rgb(51, 61, 74);
+  border-radius: 50%;
+  border: 0.5px solid floralwhite;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
